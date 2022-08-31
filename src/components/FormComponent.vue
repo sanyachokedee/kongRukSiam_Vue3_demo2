@@ -20,6 +20,15 @@
                 <input type="radio" value="หญิง" v-model="employee.gender" />
                 <label for="gender-name">หญิง</label>
             </div>
+            <div>
+                <h2>ทักษะด้านภาษา</h2>
+                <input type="checkbox" value="อังกฤษ" v-model="employee.language" />
+                <label for="gender-name">อังกฤษ</label>
+                <input type="checkbox" value="จีน" v-model="employee.language" />
+                <label for="gender-name">จีน</label>
+                <input type="checkbox" value="ญี่ปุ่น" v-model="employee.language" />
+                <label for="gender-name">ญี่ปุ่น</label>
+            </div>
         </div>
         <div>
             <button>บันทึกข้อมูล</button>
@@ -36,7 +45,8 @@ export default {
             employee: {
                 name: "",
                 salary: 25000,
-                gender: ""
+                gender: "",
+                language: []
             }
         }
     }
@@ -71,12 +81,13 @@ export default {
         padding: 0.75rem 2rem;
         border-radius: 5px;
     }
-    input[type="radio"]{
+    input[type="radio"],input[type="checkbox"]{
         display: inline-block;
         width:auto;
         margin-right: 1rem;
     }
-    input[type="radio"]+label{
+    input[type="radio"]+label,
+    +input[type="checkbox"]+label{
         font-weight: normal;
     }
     h2{
