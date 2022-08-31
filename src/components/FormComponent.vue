@@ -11,6 +11,16 @@
             <p>{{employee.salary}}</p>
         </div>
         <div class="form-control">
+            <label for="emp-department">แผนก</label>
+            <select v-model="employee.department">
+                <option value="">กรุณาเลือก</option>
+                <option value="การตลาด">การตลาด</option>
+                <option value="ฝ่ายขาย">ฝ่ายขาย</option>
+            </select>
+            <input type="number" v-model="employee.salary">
+            <p>{{employee.salary}}</p>
+        </div>
+        <div class="form-control">
             <h2>เพศ</h2>
             <div>
                 <input type="radio" value="ชาย" v-model="employee.gender" />
@@ -56,12 +66,20 @@ export default {
             const newEmployee = {
                 name: this.employee.name,
                 salary: this.employee.salary,
-                department: this.employee.deapartment,
+                department: this.employee.department,
                 gender: this.employee.gender,
-                skill:this.employee.skill
+                language:this.employee.language
             }
             console.log(this.employee)
-            this.$emit("save",newEmployee)
+            this.$emit("save", newEmployee)
+            this.resetForm()
+        },
+        resetForm() {
+            this.employee.name=""
+            this.employee.salary=0
+            this.employee.department=""
+            this.employee.gender=""
+            this.employee.language=[]
         }
     }
 }

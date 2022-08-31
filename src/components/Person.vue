@@ -2,6 +2,7 @@
   <Card>
     <template v-slot:card-header>
       <h1>{{ name }}</h1>
+      <p>เงินเดือน {{ salary }} บาท , ตำแหน่งงาน : {{ department }} เพศ {{ gender }} ทักษะ {{ language }}</p>
     </template>
     <template v-slot:card-button>
       <button @click="showDescription(id)">ดูรายละเอียด</button>&nbsp;
@@ -10,7 +11,7 @@
     <template v-slot:card-content>
       <transition name="fade">
         <div v-show="isVisible">
-          <p>เงินเดือน {{ salary }} บาท , ตำแหน่งงาน : {{ department }}</p>
+          <p>เงินเดือน {{ salary }} บาท , ตำแหน่งงาน : {{ department }} {{gender}} {{language}}</p>
         </div>
       </transition>
     </template>
@@ -49,6 +50,8 @@ export default {
     isVisible: {
       type: Boolean,
     },
+    gender: {},
+    language: {}
   },
   methods: {
     showDescription(id) {

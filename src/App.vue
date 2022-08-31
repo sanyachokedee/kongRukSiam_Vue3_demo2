@@ -5,7 +5,7 @@
   <FormComponentVue @save="insertEmployee" />
   <section class="employee-content" v-if="employees.length>0">
     <h2>ข้อมูลพนักงาน</h2>
-    <!-- {{JSON.stringify(employees)}} -->
+    {{JSON.stringify(employees)}}
     <ListData :employees="employees"/>    
   </section>
 </template>
@@ -30,7 +30,7 @@ export default {
   methods: {
     insertEmployee(data) {
       // console.log("app ="+data)
-      
+
       this.employees.push(data)
     }
   }

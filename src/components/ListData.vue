@@ -7,7 +7,9 @@
         :id="item.id" 
         :salary="item.salary"
         :department="item.department" 
-        :isVisible="item.isVisible" 
+        :isVisible="item.isVisible"
+        :gender="item.gender"
+        :language="item.language"
         @show="toggleVisible"
         @deleteEmployee_pr="removeEmployee" />
     </ul>
