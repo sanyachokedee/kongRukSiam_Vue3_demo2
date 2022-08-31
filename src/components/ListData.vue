@@ -26,7 +26,7 @@ export default {
                 { id: 3, name: "แก้ม", salary: 35000, department: "Graphics", isVisible: false },
                 { id: 4, name: "โจโจ้", salary: 3000, department: "ฝ่ายขาย", isVisible: false },
                 { id: 5, name: "สมปอง", salary: 25000, department: "ฝ่ายบริหาร" },
-                { id: 6, name: "สมศักดิ์", isVisible: false },
+                { id: 6, name: "สมศักดิ์", salary: 25000,department: "ฝ่ายบริหาร" ,isVisible: false },
             ]
         }
     },
