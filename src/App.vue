@@ -2,10 +2,11 @@
   <header>
     <h2>ระบบจัดการพนักงาน</h2>
   </header>
-  <FormComponentVue/>
-  <section class="employee-content">
+  <FormComponentVue @save="insertEmployee" />
+  <section class="employee-content" v-if="employees.length>0">
     <h2>ข้อมูลพนักงาน</h2>
-    <ListData />
+    <!-- {{JSON.stringify(employees)}} -->
+    <ListData :employees="employees"/>    
   </section>
 </template>
 
@@ -21,6 +22,18 @@ export default {
     ListData,
     FormComponentVue
   },
+  data() {
+    return {
+      employees:[]
+    }
+  },
+  methods: {
+    insertEmployee(data) {
+      // console.log("app ="+data)
+      
+      this.employees.push(data)
+    }
+  }
 };
 </script>
 

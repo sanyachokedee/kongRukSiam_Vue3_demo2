@@ -56,7 +56,7 @@ export default {
       this.$emit("show", id);
     },
     deleteEmployee(id) {
-      console.log("delete :" + id);
+      // console.log("delete :" + id);
       this.$emit("deleteEmployee_pr", id);
     },
   },
