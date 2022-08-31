@@ -1,21 +1,21 @@
 <template>
-    <div>
-        <ul>
-            <Person v-for="( item ) in employees" :key="item.id" :name="item.name" :id="item.id" :salary="item.salary"
+    <ul>       
+            <Person v-for="item  in employees" :key="item.id" :name="item.name" :id="item.id" :salary="item.salary"
                 :department="item.department" :isVisible="item.isVisible" @show="toggleVisible"
                 @deleteEmployee_pr = "removeEmployee"
             />
         </ul>
 
-    </div>
 </template>
 <script>
+
 import Person from './Person.vue'
 
 export default {
     name: "ListData",
     components: {
-        Person
+        Person,
+ 
     },
 
     data() {
@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         toggleVisible(id) {
-            console.log("Child Id: " + id)
+            // console.log("Child Id: " + id)
             this.employees = this.employees.map((item) => {
                 if (item.id === id) {
                     return {...item,isVisible:!item.isVisible}
@@ -41,7 +41,10 @@ export default {
             })
         },
         removeEmployee(id) {
-            console.log("ListData_pr :"+id)
+            // console.log("ListData_pr :" + id)
+            this.employees = this.employees.filter(item => {
+                return item.id !== id
+            })
         }
     }
 
