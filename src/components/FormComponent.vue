@@ -3,12 +3,10 @@
         <div class="form-control">
             <label for="emp-name">ชื่อพนักงาน</label>
             <input type="text" v-model.trim="employee.name">
-            <p>{{employee.name}}</p>
         </div>
         <div class="form-control">
             <label for="emp-salary">เงินเดือน</label>
             <input type="number" v-model="employee.salary">
-            <p>{{employee.salary}}</p>
         </div>
         <div class="form-control">
             <label for="emp-department">แผนก</label>
@@ -18,7 +16,6 @@
                 <option value="ฝ่ายขาย">ฝ่ายขาย</option>
             </select>
             <input type="number" v-model="employee.salary">
-            <p>{{employee.salary}}</p>
         </div>
         <div class="form-control">
             <h2>เพศ</h2>
@@ -117,6 +114,12 @@ export default {
         display: inline-block;
         width:auto;
         margin-right: 1rem;
+    }
+    select{
+        isplay:block;
+        width: 100%;
+        font:inherit;
+        margin-top: 0.5rem;
     }
     input[type="radio"]+label,
     +input[type="checkbox"]+label{
