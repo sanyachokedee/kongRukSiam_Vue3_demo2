@@ -67,7 +67,6 @@ export default {
                 gender: this.employee.gender,
                 language:this.employee.language
             }
-            console.log(this.employee)
             this.$emit("save", newEmployee)
             this.resetForm()
         },

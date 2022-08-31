@@ -30,7 +30,7 @@ export default {
   methods: {
     insertEmployee(data) {
       // console.log("app ="+data)
-
+      // นำค่าเข้าใน array ด้วยคำสั่ง push
       this.employees.push(data)
     }
   }
